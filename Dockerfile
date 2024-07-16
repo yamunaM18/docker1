@@ -1,2 +1,2 @@
-FROM python
-COPY . /
+FROM node:14
+COPY package*.json ./
