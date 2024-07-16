@@ -1,2 +1,2 @@
 FROM python
-COPY .
+COPY . /
