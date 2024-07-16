@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to HRMS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            color: black;
+            text-align: center;
+            padding: 20px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        p {
+            margin: 0 0 20px;
+            line-height: 1.5;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #0078d4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: #0078d4;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to HRMS</h1>
+        </div>
+
+        <p>Dear <strong>{{ full_name }}</strong>,</p>
+
+        <p>We are delighted to welcome you to Marolix's Human Resource Management System (HRMS). Your account has been successfully created, and you are now a valued member of our organization.</p>
+
+        <p>Here are your login details:</p>
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ccc;">
+            <tr>
+                <td style="font-weight: bold; border: 1px solid #ccc; padding: 8px;">Employee ID:</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">{{ empcode }}</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold; border: 1px solid #ccc; padding: 8px;">Username:</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">{{ username }}</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold; border: 1px solid #ccc; padding: 8px;">Password:</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">{{ password }}</td>
+            </tr>
+        </table>
+        
+        
+        <br>
+        <p>Please keep these credentials secure and do not share them with anyone. You will need these details to access your HRMS account.</p>
+
+        <p>To get started, please visit our HRMS portal at <a href="{{ hrms_url }}">{{ hrms_url }}</a> and log in using the provided credentials.</p>
+
+        <p>With our HRMS, you will have access to a wide range of features and tools to manage your HR-related tasks efficiently. You can update your personal information, view pay stubs, request time off, and much more.</p>
+
+        <p>If you have any questions or encounter any issues while using our HRMS, please don't hesitate to contact our HR department at <a href="mailto:{{ hr_contact_email }}">{{ hr_contact_email }}</a> or {{ hr_contact_phone_number }}. Our dedicated team is here to assist you.</p>
+
+        
+        <p>Once again, welcome to Marolix, and we look forward to working with you. We are committed to providing you with the best HR experience possible.</p>
+
+        <strong>Thanks and regards,</strong>
+        <strong>Marolix Team</strong>
+        
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payslip Notification</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            a {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p>Dear {{full_name}},</p>
+
+    <p>The payslip for {{dateOfPayslipGeneration}} is generated. Kindly click on the below button to download the payslip.</p>
+
+    <a href="{{download_Payslip}}"
+        style="display: inline-block; padding: 10px 20px; background-color: #007BFF; color: #fff; text-decoration: none; font-weight: bold; border-radius: 5px;">Download
+        Payslip</a>
+</body>
+
+</html>

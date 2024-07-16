@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to HRMS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            color: black;
+            text-align: center;
+            padding: 20px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        p {
+            margin: 0 0 20px;
+            line-height: 1.5;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #0078d4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: #0078d4;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        .compName
+        {
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to HRMS</h1>
+        </div>
+
+        <p>Dear <strong>{{ full_name }}</strong>,</p>
+
+        <p>We are delighted to welcome you to Marolix's Human Resource Management System (HRMS). Your account has been successfully created, and you are now a valued member of our organization.</p>
+
+        <p>Here are your login details:</p>
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ccc;">
+            <tr>
+                <td style="font-weight: bold; border: 1px solid #ccc; padding: 8px;">Employee ID:</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">{{ empcode }}</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold; border: 1px solid #ccc; padding: 8px;">Username:</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">{{ username }}</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold; border: 1px solid #ccc; padding: 8px;">Password:</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">{{ password }}</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold; border: 1px solid #ccc; padding: 8px;">Reporting Manager:</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">{{ reportingManager }}</td>
+            </tr>
+        </table>
+        
+        
+        <br>
+        <p>I hope this message finds you well. On behalf of the entire <strong class = "compName">Marolix Technology Solutions Pvt</strong> Ltd team, I wanted to extend our warmest 
+            congratulations and a very heartfelt welcome to our organization!</p>
+
+        <p>We are thrilled to have you join us as a {{ jobTitle }} and are confident that your skills and experience will be a valuable addition to our team. Your journey with us begins on
+            {{ startDate }}, 
+            and we can't wait to see the positive impact you'll make.</p>
+
+        <p>During your first week, you will have the opportunity to meet your colleagues, get acquainted with our company culture, 
+            and dive into your new responsibilities. We encourage you to ask questions, share your ideas, 
+            and make the most of your onboarding experience.</p>
+
+        <p>Feel free to reach out to HR or me if you have any questions or require 
+            any assistance before your start date. We are here to help.</p>
+
+        
+        <p>Once again, welcome to the Marolix family! We're excited to embark 
+            on this journey with you and look forward to achieving great things together.</p>
+
+        <strong>Thanks and regards,</strong>
+        <strong>Marolix Team</strong>
+        
+    </div>
+</body>
+
+</html>

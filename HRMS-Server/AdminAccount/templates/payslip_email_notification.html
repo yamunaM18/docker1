@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payslip Generation Notification</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .success-message {
+            color: green;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Payslip Generation Notification</h2>
+
+    {% if success %}
+        <p class="success-message">All payslips are generated and sent in mail to the employees.</p>
+    {% else %}
+        <p>Failed to generate payslips for the following users:</p>
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Employee ID</th>
+                    <th>Designation</th>
+                    <th>Error Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for case in cases %}
+                    <tr>
+                        <td>{{ case.username }}</td>
+                        <td>{{ case.employee_id }}</td>
+                        <td>{{ case.designation }}</td>
+                        <td class="error-message">
+                            {% if "duplicate key value violates unique constraint" in case.error_message %}
+                                Payslip already generated
+                            {% else %}
+                                {{ case.error_message }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</body>
+</html>
